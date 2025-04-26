@@ -1,0 +1,184 @@
+/* Global settings */
+:root {
+  font-size: 16px;
+  font-family: serif;
+  --color-body-bckground: #F5F5F7;
+  --color-backdrop: #B7B7B7;
+  --color-darkest: #705C53;
+  --color-banners: #EDDFE0;
+  --color-link: hsl(18, 15%, 40%);
+}
+
+body *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Laying out elements */
+body {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  background-color: var(--color-backdrop);
+}
+
+div.outer-container {
+  max-width: 1200px; 
+  min-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-body-bckground);
+}
+
+/* Headings' font-family */
+h1, h2 {
+  font-family: "Newsreader", serif;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+}
+
+/* Common link appearance */
+a {
+  color: var(--color-link);
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+a:active {
+  color: var(--color-body-bckground);
+  background-color: var(--color-darkest);
+}
+
+/* Styling the banners */
+header {
+  width: 100%;
+  background-color: var(--color-banners);
+  text-align: center;
+  border: 0.4rem solid var(--color-darkest);
+  border-left: 0;
+  border-right: 0;
+  padding: 2rem;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--color-banners);
+  text-align: center;
+  border: 0.4rem solid var(--color-darkest);
+  border-left: 0;
+  border-right: 0;
+  padding: 1rem;
+  font-family: "Newsreader", serif;
+  font-weight: 500;
+}
+
+/* styling the main container */
+main {
+  display: flex;
+  justify-content: space-between;
+  column-gap: clamp(2rem, 3.5rem, 5rem);
+  padding: clamp(1rem, 1.5rem, 2rem);
+  padding-top: clamp(1.5rem, 3rem, 5rem);
+  width: 100%;
+}
+
+/* Top Course choices aside */
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: max-content;
+  flex-shrink: 0;
+  row-gap: 1rem;
+}
+
+aside > ul {
+  align-self: center;
+  padding-left: 2rem;
+  list-style-type: square;
+}
+
+aside > ul > li {
+  line-height: 1.5rem;
+}
+
+/* Section with articles */
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(1rem, 2rem, 6rem);
+  min-width: 250px;
+  max-width: 500px;
+}
+
+section > article h2 {
+  margin-bottom: 1.1rem;
+}
+
+section > article p {
+  padding: 0.3rem 0;
+}
+
+section > article > p:first-of-type {
+  text-indent: 1rem;
+}
+/* Brave new world... article */
+section > article.brave-new-world a::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-size: 100%;
+  background-image: url("./assets/newtab-link24.png");
+}
+
+/* The best start... article  */
+section > article.best-start ul {
+  list-style-type: square;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.3rem;
+}
+
+section > article.best-start ol {
+  list-style-type: lower-alpha;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.3rem;
+}
+
+/* styling the navbar */
+nav {
+  position: relative;
+}
+
+nav ul {
+  position: sticky;
+  top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  row-gap: 1.2rem;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Newsreader", serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-darkest);
+  text-align: center;
+  width: 160px;
+  transition: background-color 300ms 50ms;
+}
+
+nav a:hover {
+  background-color: var(--color-backdrop);
+}
