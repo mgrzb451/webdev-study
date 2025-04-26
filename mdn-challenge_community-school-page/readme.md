@@ -10,5 +10,9 @@ My very first webpage practice project. Thank you mdn for this [practice challen
   * Trying to structure my .css document in a logical way, but given a dearth of rigid guidelines I'm left stumbling and trying out different approaches. Next time I'll try to split the file into sections for each major HTML part
   * Trying (and failing) to use `clamp()` for setting widths, but I think I know what I did wrong; having some fun with `transition` and `position: sticky`
  
-## My result
+## The plan
+![page-layout](https://github.com/user-attachments/assets/45353e5f-5b65-460e-8f57-1f3226da8e38)
+
+
+## The result
 ![mdn-challenge](https://github.com/user-attachments/assets/12cfa6fc-168a-4eb8-8cef-d9fe446ba321)
