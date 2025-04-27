@@ -4,7 +4,7 @@ My version of a Balloon blog webpage from [MDN's challenge](https://developer.mo
 
 ## What I learned:
 - Creating an initial set-up for the CSS file
-- Utilizing variables
+- Utilizing variables and defining *utility classes*
 - Practice with the `display:grid`
 - Creating a sticky **navbar**
 
