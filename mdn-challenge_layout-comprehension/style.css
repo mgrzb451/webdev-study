@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+:root {
+  --margin-general: 80px;
+  --width-max: 1200px;
+}
+
+body {
+  margin: 0 auto;
+  font-family: sans-serif;
+  max-width: var(--width-max);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: "Monsterrat", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  word-spacing: 5px;
+  padding: 30px 0;  
+  margin: 0 var(--margin-general);
+}
+
+/* Navbar */
+nav {
+  background-color: black;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  top: 10px;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+/* Main body */
+main {
+  margin-top: 20px;
+  margin-left: var(--margin-general);
+  margin-right: var(--margin-general);
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 30px;
+}
+
+/* Blog post */
+main article img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+main article p {
+  line-height: 20px;
+  word-spacing: 4px;
+  margin: 10px 0;
+}
+
+main article p:first-of-type {
+  margin-top: 0;
+}
+
+/* Photograpy sidebar */
+main aside ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+
+main aside ul img {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  max-width: var(--width-max);
+  color: white;
+  font-family: "Monsterrat", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  padding: 0 10px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Small screen devices */
+@media screen and (width < 900px) {
+  :root {
+    --margin-general: 40px;
+  }
+  /* specify minimum width */
+  body {
+    max-width: 100%;
+    min-width: 460px;
+    overflow-x: hidden;
+  }
+
+  /* layout elemnts in a single column, reduce gap */
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    gap: 15px;
+    justify-items: center;
+  }
+
+  main article img {
+    float: none;
+  }
+}
+
+/* Shared Classes */
+.main-h2 {
+  font-size: 22px;
+  font-weight: 600;
+  word-spacing: 3px;
+  padding-bottom: 20px;
+}
