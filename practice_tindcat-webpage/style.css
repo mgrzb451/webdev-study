@@ -1,0 +1,370 @@
+:root {
+  --width-default: 75rem;
+  --padding-default: 2rem;
+  --color-testimonials-bgr: hsl(210, 17%, 90%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header.site-header div.nav-container {
+  margin-inline: auto;
+  max-width: var(--width-default);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 0;
+}
+
+header.site-header div.nav-text {
+  padding-right: 1rem;
+}
+
+header.site-header div.nav-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Style the buttons */
+header.site-header div.nav-text ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+}
+
+header.site-header div.nav-text ul a {
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-weight: 500;
+  text-wrap-mode: nowrap;
+}
+
+header.site-header div.nav-text ul a:hover {
+  font-weight: 800;
+}
+
+header.site-header div.nav-text ul a.apple {
+  color: black;
+  background-color: white;
+}
+
+/* Take notes on adding icons with ::before and inverting color */
+header.site-header div.nav-text ul a.apple::before {
+  content: url("./assets/icons/apple.svg");
+  margin-right: 0.5rem;
+}
+
+
+header.site-header div.nav-text ul a.play {
+  color: white;
+}
+
+header.site-header div.nav-text ul a.play::before {
+  content: url("./assets/icons/google-play.svg");
+  margin-right: 0.5rem;
+  filter: invert(1);
+}
+
+main {
+  max-width: var(--width-default);
+  margin-inline: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Features section */
+main section.features {
+  max-width: var(--width-default);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+main section.features div {
+  display: flex;
+  flex-direction: column;
+}
+
+main section.features div h2 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+main section.features div img {
+  width: 2.4rem;
+  height: auto;
+  padding: 0.4rem;
+  border-radius: 15%;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+main section.features div p {
+  padding-left: 3.4rem;
+  word-wrap: normal;
+}
+
+.whole-width-background {
+  padding-block: 4rem;
+  width: 100vw;
+  background-color: var(--color-testimonials-bgr);
+}
+
+/* Testimonial cards */
+main section.testimonials {
+  max-width: var(--width-default);
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+main section.testimonials article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5%;
+  background-color: white;
+  box-shadow: 0 7px 10px gray;
+  padding: 0.5rem;  
+}
+
+main section.testimonials img {
+  max-width: 11rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+main section.testimonials figcaption {
+  text-align: center;
+}
+
+/* Partners images strip */
+section.partners {
+  max-width: var(--width-default);
+  margin-inline: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Pricing Plans Cards */
+section.pricing {
+  max-width: var(--width-default);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  justify-content: space-between;
+  gap: 2rem;
+
+  header.pricing-header {
+    grid-column: 1 / span 3;
+    text-align: center;
+  }
+
+  div.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #d2d2d2;
+    border-radius: 10px;    
+    text-align: center;
+
+    h2 {
+      font-weight: 400;
+      width: 100%;
+      background-color: hsl(0, 0%, 85%);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    p {
+      font-size: 2rem;
+      font-weight: 100;
+      line-height: 2;
+      
+      span {
+        font-weight: 400;
+      }
+    }
+  
+    ul {
+      line-height: 1.5;
+    }
+    
+    a {
+      color: white;
+      background-color: black;
+      line-height: 2.8;
+      width: 90%;
+      border-radius: 10px;
+      margin-block: 1rem;
+
+      &:hover {
+        background-color: hsl(0, 0%, 30%);
+      }
+    }
+
+    &:last-of-type {
+      border-color: black;
+    
+      &:last-of-type h2 {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  
+  div.pricing-card:first-of-type a {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: hsl(0, 0%, 90%);
+    }
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  padding-top: 2rem;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+
+  /* App name font */
+  & > p {
+    font-weight: 600;
+  }
+  
+  /* Lists of links*/
+  ul {
+    width: max-content;
+    
+    /* Heading of each list */
+    & li:first-of-type {
+      font-weight: 600;
+    }
+    /* Except the last list with no heading */
+    &:last-of-type li {
+      font-weight: 400;
+    }
+
+    /* Links colors */
+    a {
+      color: black;
+
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+  /* put social on 1st line and icons on a 2nd */
+  ul.social {
+    display: relative;
+    display: flex;
+
+    li:not(:first-child) {
+      padding-top: 1.3rem;
+    }
+    
+    li:first-child {
+      position: absolute;
+    }
+  }    
+}
+
+/* Utility classes */
+.padding-h-default {
+  padding-inline: var(--padding-default);
+}
+
+/* Animated background */
+.gradient-bg {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: animate-bg 18s ease infinite;
+}
+
+@keyframes animate-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (width < 46.5rem) {
+  header.site-header div.nav-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      justify-content: center;
+    }
+
+    div.nav-text {
+      margin-bottom: 2rem;
+    }
+  }
+}
