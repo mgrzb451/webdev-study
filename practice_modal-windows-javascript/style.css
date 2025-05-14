@@ -1,0 +1,124 @@
+/* Setup */
+:root {
+  --color-dark-grey: hsl(0, 0%, 20%);
+  --color-white: hsl(0, 0%, 80%);
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+p {
+  max-width: 50ch;
+  color: var(--color-dark-grey);
+  line-height: 1.5;
+}
+
+/* Body */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr min(100vw - 100px, 1100px) 1fr;
+  justify-items: center;
+  background: linear-gradient(to left top, grey, white, grey);
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+
+  > *{
+    grid-column: 2;
+  }
+}
+
+/* Shared classes */
+.button {
+  width: max-content;
+  height: max-content;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  background-color: var(--color-dark-grey);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  border: 1px solid var(--color-dark-grey);
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 5px black;
+  transition: box-shadow 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+
+  &:hover {
+    box-shadow: 0px 2px 5px 8px black;
+    transform: translateY(-5px);    
+  }
+
+  &:active {
+    box-shadow: 0px 0px 3px 4px black;
+    transform: translateY(0px);    
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#blurmask {
+  backdrop-filter: blur(5px);
+  background-color: hsla(from var(--color-dark-grey) h s l / 30%);
+  position: absolute;
+  top: 0;
+  left: -50vw;
+  width: 150vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+/* Nav bar */
+nav {
+  margin-block-start: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Modal windows */
+article {
+  max-width: min(40vw, 500px);
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr min(100% - 20px, 90%) 1fr;
+  grid-template-rows: auto auto 1fr;
+  border: 1px solid var(--color-dark-grey);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 1px black;
+  gap: 20px;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  transform: translateX(50%);
+  z-index: 3;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  > * {
+    grid-column: 2;
+  }
+
+  button.button {
+    margin-block-start: 30px;
+    justify-self: end;
+    background-color: white;
+    font-weight: bold;
+    color: var(--color-dark-grey);
+    border: 1px solid var(--color-dark-grey);
+  }
+}
